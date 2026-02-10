@@ -1,0 +1,20 @@
+package com.example;
+
+public class MainApp {
+
+    public static void main(String[] args) {
+        MathOperation add = (a, b) -> a + b;
+        MathOperation subtract = (a, b) -> a - b;
+        MathOperation multiply = (a, b) -> a * b;
+        MathOperation divide = (a, b) -> {
+            if (b == 0) {
+                throw new ArithmeticException("Cannot divide by zero");
+            }
+            return a / b;
+        };
+        System.out.println("10 + 5 = " + add.compute(10, 5));
+        System.out.println("10 - 5 = " + subtract.compute(10, 5));
+        System.out.println("10 * 5 = " + multiply.compute(10, 5));
+        System.out.println("10 / 5 = " + divide.compute(10, 5));
+    }
+}
